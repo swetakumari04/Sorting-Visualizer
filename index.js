@@ -30,14 +30,14 @@ select_algo.addEventListener("change", function () {
     algotouse = select_algo.value;
 });
 
-function randomNum(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+ function randomNum(min, max) {
+     return Math.random();
+ }
 
 function createRandomArray() {
     let array = new Array(numOfBars);
     for (let i = 0; i < numOfBars; i++) {
-        array[i] = randomNum(minRange, maxRange);
+        array[i] = Math.random();
     }
 
     return array;
