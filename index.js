@@ -7,7 +7,7 @@ let slider = document.getElementById("slider");
 let minRange = 1;
 let maxRange = slider.value;
 let numOfBars = slider.value;
-let heightFactor = 100;
+let heightFactor = 1000;
 let speedFactor = 500;
 let unsorted_array = new Array(numOfBars);
 
