@@ -8,7 +8,7 @@ let minRange = 1;
 let maxRange = slider.value;
 let numOfBars = slider.value;
 let heightFactor = 100;
-let speedFactor = 200;
+let speedFactor = 500;
 let unsorted_array = new Array(numOfBars);
 
 slider.addEventListener("input", function () {
@@ -80,10 +80,10 @@ async function bubbleSort(array) {
                 let temp = array[j];
                 array[j] = array[j + 1];
                 array[j + 1] = temp;
-                bars[j].style.height = array[j] * heightFactor + "px";
+                bars[j].style.height = array[j] * heightFactor + "%";
                 bars[j].style.backgroundColor = "lightgreen";
                 //bars[j].innerText = array[j];
-                bars[j + 1].style.height = array[j + 1] * heightFactor + "px";
+                bars[j + 1].style.height = array[j + 1] * heightFactor + "%";
                 bars[j + 1].style.backgroundColor = "lightgreen";
                 //bars[j + 1].innerText = array[j + 1];
                 await sleep(speedFactor);
@@ -98,10 +98,10 @@ async function swap(items, leftIndex, rightIndex, bars) {
     var temp = items[leftIndex];
     items[leftIndex] = items[rightIndex];
     items[rightIndex] = temp;
-    bars[leftIndex].style.height = items[leftIndex] * heightFactor + "px";
+    bars[leftIndex].style.height = items[leftIndex] * heightFactor + "%";
     bars[leftIndex].style.backgroundColor = "lightgreen";
     //bars[leftIndex].innerText = items[leftIndex];
-    bars[rightIndex].style.height = items[rightIndex] * heightFactor + "px";
+    bars[rightIndex].style.height = items[rightIndex] * heightFactor + "%";
     bars[rightIndex].style.backgroundColor = "lightgreen";
     //bars[rightIndex].innerText = items[rightIndex];
     await sleep(speedFactor);
@@ -170,7 +170,7 @@ async function InsertionSort(array) {
         let j = i - 1;
         while (j >= 0 && array[j] > key) {
             array[j + 1] = array[j];
-            bars[j + 1].style.height = array[j + 1] * heightFactor + "px";
+            bars[j + 1].style.height = array[j + 1] * heightFactor + "%";
             bars[j + 1].style.backgroundColor = "red";
             //bars[j + 1].innerText = array[j + 1];
             await sleep(speedFactor);
@@ -183,7 +183,7 @@ async function InsertionSort(array) {
             j = j - 1;
         }
         array[j + 1] = key;
-        bars[j + 1].style.height = array[j + 1] * heightFactor + "px";
+        bars[j + 1].style.height = array[j + 1] * heightFactor + "%";
         bars[j + 1].style.backgroundColor = "lightgreen";
         //bars[j + 1].innerText = array[j + 1];
         await sleep(speedFactor);
@@ -234,8 +234,8 @@ async function swap(array, i, j, bars) {
     let temp = array[i];
     array[i] = array[j];
     array[j] = temp;
-    bars[i].style.height = array[i] * heightFactor + "px";
-    bars[j].style.height = array[j] * heightFactor + "px";
+    bars[i].style.height = array[i] * heightFactor + "%";
+    bars[j].style.height = array[j] * heightFactor + "%";
     bars[i].style.backgroundColor = "red";
     bars[j].style.backgroundColor = "red";
     await sleep(speedFactor);
@@ -270,31 +270,31 @@ async function mergeSort(arr) {
         if (left[i] < right[j]) {
             arr[k] = left[i];
             i++;
-            // bars[k].style.height = arr[k] * heightFactor + "px";
+            // bars[k].style.height = arr[k] * heightFactor + "%";
             // bars[k].style.backgroundColor = "lightgreen";
             // bars[k].innerText = arr[k];
             //await sleep(speedFactor);
         } else {
             arr[k] = right[j];
             j++;
-            // bars[k + middle].style.height = arr[k] * heightFactor + "px";
+            // bars[k + middle].style.height = arr[k] * heightFactor + "%";
             // bars[k + middle].style.backgroundColor = "yellow";
             // bars[k].innerText = arr[k];
             //await sleep(speedFactor);
         }
         //shift to right side
         //console.log(k);
-        //bars[k].style.height = arr[k] * heightFactor + "px";
+        //bars[k].style.height = arr[k] * heightFactor + "%";
         //bars[k].style.backgroundColor = "lightgreen";
 
-        // bars[k + middle].style.height = arr[k] * heightFactor + "px";
+        // bars[k + middle].style.height = arr[k] * heightFactor + "%";
         // bars[k + middle].style.backgroundColor = "yellow";
 
         //visualize it for right and left side
         bars[k].style.height = arr[k] * heightFactor + "px";
         bars[k].style.backgroundColor = "lightgreen";
         if (k + arr.length < bars.length) {
-            bars[k + arr.length].style.height = arr[k] * heightFactor + "px";
+            bars[k + arr.length].style.height = arr[k] * heightFactor + "%";
             console.log(arr[k] * heightFactor);
             bars[k + arr.length].style.backgroundColor = "yellow";
         }
@@ -306,7 +306,7 @@ async function mergeSort(arr) {
 
     while (i < left.length) {
         arr[k] = left[i];
-        bars[k].style.height = arr[k] * heightFactor + "px";
+        bars[k].style.height = arr[k] * heightFactor + "%";
         bars[k].style.backgroundColor = "lightgreen";
         await sleep(speedFactor);
         i++;
@@ -315,7 +315,7 @@ async function mergeSort(arr) {
 
     while (j < right.length) {
         arr[k] = right[j];
-        bars[k].style.height = arr[k] * heightFactor + "px";
+        bars[k].style.height = arr[k] * heightFactor + "%";
         bars[k].style.backgroundColor = "lightgreen";
         await sleep(speedFactor);
         j++;
@@ -323,7 +323,7 @@ async function mergeSort(arr) {
     }
 
     // for (let i = 0; i < arr.length; i++) {
-    //   bars[i].style.height = arr[i] * heightFactor + "px";
+    //   bars[i].style.height = arr[i] * heightFactor + "%";
     //   bars[i].style.backgroundColor = "lightgreen";
     //   await sleep(speedFactor);
     // }
