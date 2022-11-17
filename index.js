@@ -7,7 +7,7 @@ let slider = document.getElementById("slider");
 let minRange = 1;
 let maxRange = slider.value;
 let numOfBars = slider.value;
-let heightFactor = 4;
+let heightFactor = 100;
 let speedFactor = 200;
 let unsorted_array = new Array(numOfBars);
 
@@ -52,7 +52,7 @@ function renderBars(array) {
     for (let i = 0; i < numOfBars; i++) {
         let bar = document.createElement("div");
         bar.classList.add("bar");
-        bar.style.height = array[i] * heightFactor + "px";
+        bar.style.height = array[i] * heightFactor + "%";
         bars_container.appendChild(bar);
     }
 }
