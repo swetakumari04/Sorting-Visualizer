@@ -7,8 +7,8 @@ let slider = document.getElementById("slider");
 let minRange = 1;
 let maxRange = slider.value;
 let numOfBars = slider.value;
-let heightFactor = 10;
-let speedFactor = 100;
+let heightFactor = 14;
+let speedFactor = 60;
 let unsorted_array = new Array(numOfBars);
 
 slider.addEventListener("input", function () {
